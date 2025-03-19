@@ -17,7 +17,14 @@ const strCalculator = {
     
         numbers = numbers.replaceAll('\\', '');
     
-        let delimiter = /[\\n,]/; // Default delimiters: comma or newline      
+        let delimiter = /[\\n,]/; // Default delimiters: comma or newline
+        
+        // Support for different delimiters
+        if (numbers.startsWith('//')) {
+            const parts = numbers.split('n');
+            delimiter = new RegExp(parts[0].slice(2)); // Extract custom delimiter
+            numbers = parts[1];
+        }
     
         const splitNumbers = numbers.split(delimiter);
         let sum = 0;
@@ -31,19 +38,19 @@ const strCalculator = {
                 sum += parseInt(splitNumbers[i]);
             }
         }
-
+        
         numbers = sum;
 
         // Display an exception for negative numbers
         negativeNumbers.length > 0
-        ? (document.getElementById('error').textContent =
-            'Negative numbers not allowed ' + negativeNumbers.join(', '))
-        : (document.getElementById('error').textContent = '');
+            ? (document.getElementById('error').textContent =
+                'Negative numbers not allowed ' + negativeNumbers.join(', '))
+            : (document.getElementById('error').textContent = '');
 
         return numbers;
         
     },
-  };
+};
 
 // Calling the calculate function here
 const btn = document.querySelector('#calculate');
