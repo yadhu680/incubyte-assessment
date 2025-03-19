@@ -22,7 +22,7 @@ This project is a simple implementation of the String Calculator using Test-Driv
 
 # Setup
 
-# 1.Clone the respository 
+# Clone the respository 
 
   git clone https://github.com/yadhu680/incubyte-assessment.git
   
