@@ -25,6 +25,7 @@ This project is a simple implementation of the String Calculator using Test-Driv
 # 1.Clone the respository 
 
   git clone https://github.com/yadhu680/incubyte-assessment.git
+  
   cd incubyte-assessment
 
   Open index.html file in browser
