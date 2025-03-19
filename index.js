@@ -16,3 +16,7 @@ const strCalculator = {
         if (numbers === '""') return 0;      
     }
 };
+
+// Calling the calculate function here
+const btn = document.querySelector('#calculate');
+btn.addEventListener('click', stringCalculatorTester);
